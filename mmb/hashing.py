@@ -15,8 +15,3 @@ def get_salt(user: bytes):
 def hash_password(password: bytes, user: bytes):
     salt = get_salt(user)
     return hashlib.pbkdf2_hmac('sha256', password, salt, NUMBER_OF_ITERATIONS)
-
-
-if __name__ == '__main__':
-    print(get_salt(b'lalalal'))
-    print(hash_password(b'temppass', b'sanchopanca'))
